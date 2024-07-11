@@ -7,13 +7,14 @@ Given a number n, write a method that calculates the fewest
 number of operations needed to result in exactly n H characters in the file.
 """
 
+
 def minOperations(n):
-    """this gets the operations needed to result in n H characters"""
-    xy = 0
-    yx = 2
+    """this gets the no of operations needed to result in n H characters"""
+    t = 0
+    m = 2
     while n > 1:
-        while not n % yx:
-            xy += yx
-            n /= yx
-        yx += 1
-    return xy
+        while not n % m:
+            t += m
+            n /= m
+        m += 1
+    return t
