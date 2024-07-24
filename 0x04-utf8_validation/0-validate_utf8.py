@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 """
-this is the validUTF8 function that checks if a
-string of ints shows a valid UTF-8 encoding.
+Define validUTF8(data) function that validates whether a
+string of ints represents a valid UTF-8 encoding.
 """
 from itertools import takewhile
 
 
 def int_to_bits(nums):
     """
-    this is the helper function
-    that changes ints to bits
+    Helper function
+    Convert ints to bits
     """
     for num in nums:
         bits = []
@@ -22,8 +22,8 @@ def int_to_bits(nums):
 
 def validUTF8(data):
     """
-    this is the takes list of ints that returns true if the list is
-    a valid UTF-8 encoding and else returns false if not
+    Takes a list of ints and returns true if the list is
+    a valid UTF-8 encoding, else returns false
     Args:
         data : List of ints representing possible UTF-8 encoding
     Return:
