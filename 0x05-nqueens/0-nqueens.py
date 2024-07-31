@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" this is the queens """
+""" this is the N queens """
 import sys
 
 
@@ -15,24 +15,24 @@ if int(sys.argv[1]) < 4:
     print("N must be at least 4")
     exit(1)
 
-num = int(sys.argv[1])
+n = int(sys.argv[1])
 
 
-def queens(num, i=0, a=[], b=[], c=[]):
-    """ find possible positions """
-    if i < num:
-        for j in range(num):
+def queens(n, i=0, a=[], b=[], c=[]):
+    """ this finds possible positions """
+    if i < n:
+        for j in range(n):
             if j not in a and i + j not in b and i - j not in c:
-                yield from queens(num, i + 1, a + [j], b + [i + j], c + [i - j])
+                yield from queens(n, i + 1, a + [j], b + [i + j], c + [i - j])
     else:
         yield a
 
 
-def solve(num):
+def solve(n):
     """ solve """
     k = []
     i = 0
-    for solution in queens(num, 0):
+    for solution in queens(n, 0):
         for s in solution:
             k.append([i, s])
             i += 1
@@ -41,4 +41,4 @@ def solve(num):
         i = 0
 
 
-solve(num)
+solve(n)
